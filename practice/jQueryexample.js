@@ -8,22 +8,27 @@ $(document).ready(function(){
 
 });
 
-// submit is the event, not DOM element.  Form is DOM element
-// click events are from buttons, 
+// Form is DOM element
+// submit is the event   
+// click events are from/for buttons (like SUBMIT), 
 // forms are from submit events like hitting enter
+// preventDefault is action
 $("form").submit(function(event){
-  event.preventDefault(); //preventD is action
+  event.preventDefault(); 
 
+  
   // input is the class, todo is the id
-  // this is why id must be unique!
-
+  // this is why id must be unique in HTML, but can have many with same class!
+  // val get value of input field and stores as variable
   var todo_item = $("input#todo").val(); 
-  // val get value of input field and stores as vairable
 
   // below return the jQ object which is selected (the part in HTML)
   // on is current command for jQ (used to be live, before that bind)
   // "click" is our event (the bottom on html page) 
-  var new_todo_item = $("<li><input type='checkbox'/>" + todo_item + " </li>").on("click", function() {
+  var new_todo_item = 
+
+  $(
+    "<li><input type='checkbox'/>" + todo_item + " </li>").on("click", function() {
     $(this).toggleClass("completed");
   });
   // $(this), exactly the same as self.method_name in Ruby, 
@@ -39,7 +44,7 @@ $("form").submit(function(event){
 
 
 
-val ("") val () -- diff between getting and setting.  () gets, ("stuff") sets.
+// val ("") val () -- diff between getting and setting.  () gets, ("stuff") sets.
 
 
 
